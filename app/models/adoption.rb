@@ -1,4 +1,4 @@
 class Adoption < ActiveRecord::Base
-  has_one :cat
-  has_one :person
+  belongs_to :cat
+  belongs_to :person
 end
