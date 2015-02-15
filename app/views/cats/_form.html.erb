@@ -1,0 +1,30 @@
+<%= form_for(@cat) do |cat| %>
+  <% if @cat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cat.errors.count, "error") %> prohibited this cat from being saved:</h2>
+
+      <ul>
+      <% @cat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end #if @cat.errrors.any? %>
+
+  <div class="cat-layout">
+    <div class="cat-image">
+      <img src="<%= @cat.img %>" alt=""/>
+    </div><!-- cat-image -->
+    <div class="cat-info">
+      <div class="field">
+        <%= cat.label :name %><br>
+        <%= cat.text_area :name %>
+      </div><!-- field -->
+
+      <div class="field">
+        <%= cat.label :breed %><br>
+        <%= cat.text_area :breed %>
+      </div><!-- field -->  
+    </div><!-- cat-info -->
+  </div><!-- cat-layout -->
+<% end #form_for(@cat) %>

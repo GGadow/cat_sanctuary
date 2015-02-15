@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="cat-layout">
+    <div class="cat-image">
+      <img src="<%= @cat.img %>" alt=""/>
+    </div><!-- cat-image -->
+    <div class="cat-info">
+      <table>
+        <tr>
+          <th>Name</th>
+          <td><%= @cat.name %></td>
+        </tr>
+        <tr>
+          <th>Breed</th>
+          <td><%= @cat.breed %></td>
+        </tr>
+        <tr>
+          <th>Age</th>
+          <td><%= "#{pluralize(@cat.age, "year")} old" %></td>
+        </tr>
+        <tr>
+          <th>Arrived</th>
+          <td><%= @cat.arrival_date.strftime("%D") %></td>
+        </tr>
+<% if !@cat.notes.blank? %>
+        <tr>
+          <th>Notes</th>
+          <td><%= @cat.notes %></td>
+        </tr>
+<% end %>
+<% if !@cat.adoption.nil? %>
+        <tr>
+          <td colspan="2">
+            <table class="adoption-info">
+              <tr>
+                <th>Adopted</th>
+                <td><%= @cat.adoption.adoption_date.strftime("%D") %></td>
+              </tr>
+              <tr>
+                <th>By</th>
+                <td><a href="#" title="In a full system, this would link to the person record."><%= @cat.adoption.person.name %></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+<% end %>
+        <tr>
+          <!-- <td><%= link_to 'Edit', edit_cat_path(@cat) %></td> -->
+          <td><a href="#" title="In a full system, this would let you edit the cat record.">Edit</a></td>
+          <td><%= link_to 'Back', cats_path %></td>
+      </table>
+
+    </div><!-- cat-info -->
+  </div><!-- cat-layout -->
+

@@ -1,0 +1,92 @@
+$font-stack: Helvetica, sans-serif;
+
+
+* {
+  margin: 0;
+	padding: 0;
+  border-style: none;
+	outline-style: none;
+	vertical-align: baseline;
+}
+
+body {
+  background-image: image-url('vellum-gold-seamless-background.jpg');
+  font-family: $font-stack;
+}
+
+div.padding {
+  margin:0.5em;
+}
+
+h1 {/* Used as page header */
+  color: #FFFFFF;
+  font-size: 2.5em;
+}
+
+table {
+  border-collapse:collapse;
+  border:none;
+}
+
+td, th {
+  padding: 0.25em;
+  text-align: left;
+}
+
+th {
+  background-color: transparent;
+}
+
+th::after {
+  content: ":"
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+div.cat-layout {
+}
+
+div.cat-image {
+  float:left;
+}
+
+div.cat-info {
+  float: left;
+  margin-left:2em;
+}
+
+table.adoption-info {
+  margin-left: -0.25em;
+  background-color: #66FF66;
+}
+
+#container {
+  background-color: #000077;
+  width: 900px;
+  overflow: auto;
+  margin: 40px auto 40px auto;
+	border-radius:20px;
+	box-shadow: 10px 10px 9px #2E0000;
+}
+
+#content {
+  background-color: #FFFFFF;
+  min-height: 300px;
+  overflow: auto;
+  width: 900px;
+}
+
+#footer {
+  background-color: #000077;
+  clear:both;
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 0.9em;
+}
+
+#header {
+  background-color: #000077;
+  width: 100%;
+}

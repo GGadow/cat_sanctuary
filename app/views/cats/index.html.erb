@@ -1,0 +1,13 @@
+<h1>Kitties</h1>
+
+<table>
+<% @cats.each do |cat| %>
+  <tr>
+    <td><%= link_to cat.name, cat %></td>
+    <td><%= "#{pluralize(cat.age, "year")} old" %></td>
+    <td><img src="<%= cat.img_small %>" alt="" /></td>
+  </tr>
+<% end %>
+</table>
+
+<p style="margin-top:1.25em;"><%= link_to 'New Cat', new_cat_path %></p>
