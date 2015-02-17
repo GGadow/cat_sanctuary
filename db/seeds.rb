@@ -14,7 +14,7 @@ Person.create(fname: "Betty", lname: "Burrows", address: "321 Oak Drive", city: 
 #Add Cat data
 
 @kitty = Cat.create(name: "Fluffy", breed: "Calico", age: "1", arrival_date: "2015/01/28", image_url: "bunny", notes: "Such a cutie!")
-Cat.create(name: "Tux", breed: "Tuxedo", age: "6", arrival_date: "2015/01/31", image_url: "fluffy")
+Cat.create(name: "Tux", breed: "Tuxedo", age: "6", arrival_date: "2015/01/31", image_url: "tux")
 Cat.create(name: "Felix", breed: "Calico", age: "4", arrival_date: "2015/02/04", image_url: "fred")
 
 #Add Adoption data

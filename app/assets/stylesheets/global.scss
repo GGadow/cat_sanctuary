@@ -4,45 +4,15 @@ $font-stack: Helvetica, sans-serif;
 * {
   margin: 0;
 	padding: 0;
-  border-style: none;
-	outline-style: none;
 	vertical-align: baseline;
+}
+
+a.as-button {
 }
 
 body {
   background-image: image-url('vellum-gold-seamless-background.jpg');
   font-family: $font-stack;
-}
-
-div.padding {
-  margin:0.5em;
-}
-
-h1 {/* Used as page header */
-  color: #FFFFFF;
-  font-size: 2.5em;
-}
-
-table {
-  border-collapse:collapse;
-  border:none;
-}
-
-td, th {
-  padding: 0.25em;
-  text-align: left;
-}
-
-th {
-  background-color: transparent;
-}
-
-th::after {
-  content: ":"
-}
-
-p {
-  margin-bottom: 1em;
 }
 
 div.cat-layout {
@@ -57,9 +27,71 @@ div.cat-info {
   margin-left:2em;
 }
 
+div.padding {
+  margin:0.5em;
+}
+
+h1 {/* Used in banner */
+  color: #FFFFFF;
+  font-size: 2.5em;
+}
+
+h2 {/* Page header */
+}
+
+hr {
+  margin-bottom: 1em;
+}
+
+input[type=submit], a.as-button {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius:6px;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: #000000;
+  cursor: pointer;
+  border:none;
+  padding: 2px 4px;
+  border: solid 1px #CCCCCC;
+  background-color: #FCFCFC;
+}
+
+input[type=submit]:hover, a.as-button:hover {
+  border: solid 1px #000077;
+  background-color: #EEEEEE;
+}
+
+table {
+  border-collapse:collapse;
+  border:none;
+}
+
 table.adoption-info {
   margin-left: -0.25em;
   background-color: #66FF66;
+}
+
+td, th {
+  padding: 0.25em;
+  text-align: left;
+}
+
+td.cat-not-available {
+  font-weight:bold;
+  color:#66FF66;
+}
+
+th {
+  background-color: transparent;
+}
+
+th::after {
+  content: ":"
+}
+
+p {
+  margin-bottom: 1em;
 }
 
 #container {

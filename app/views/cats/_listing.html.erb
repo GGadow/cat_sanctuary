@@ -1,0 +1,10 @@
+<table>
+<% @cats.each do |cat| %>
+  <tr>
+    <td class="cat-not-available"><% if !cat.adoption.nil? %>ADOPTED!<% end %></td>
+    <td><%= link_to cat.name, cat %></td>
+    <td><%= "#{pluralize(cat.age, "year")} old" %></td>
+    <td><img src="<%= cat.img_small %>" alt="" /></td>
+  </tr>
+<% end %>
+</table>

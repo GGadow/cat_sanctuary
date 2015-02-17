@@ -16,6 +16,16 @@ class CatsController < ApplicationController
   end
 
   def create
+    @cat = Cat.new(cat_params)
+    respond_to do |format|
+      if @cat.save
+        format.html {redirect_to cats_path, notice: 'Cat has been saved.'}
+        format.json { render :show, status: :created, location: @cat }
+      else
+        format.html {render :new}
+        format.json {render json: @cat.errors, status: :unprocessable_entity}
+      end
+    end
   end
 
   def update

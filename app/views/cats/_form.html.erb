@@ -11,20 +11,35 @@
     </div>
   <% end #if @cat.errrors.any? %>
 
-  <div class="cat-layout">
-    <div class="cat-image">
-      <img src="<%= @cat.img %>" alt=""/>
-    </div><!-- cat-image -->
-    <div class="cat-info">
-      <div class="field">
-        <%= cat.label :name %><br>
-        <%= cat.text_area :name %>
-      </div><!-- field -->
+      <table>
+        <tr>
+          <th><%= cat.label :name %></th>
+          <td><%= cat.text_field :name %></td>
+        </tr>
+        <tr>
+          <th><%= cat.label "Image"%></th>
+          <td><%= cat.select :image_url, General.cat_images %></td>
+        </tr>
+        <tr>
+          <th><%= cat.label :breed %></th>
+          <td><%= cat.text_field :breed %></td>
+        </tr>
+        <tr>
+          <th><%= cat.label :age %></th>
+          <td><%= cat.number_field :age, in:0..20 %></td>
+        </tr>
+        <tr>
+          <th><%= cat.label :arrival_date %></th>
+          <td><%= cat.date_field :arrival_date %></td>
+        </tr>
+        <tr>
+          <th><%= cat.label :notes %></th>
+          <td><%= cat.text_area :notes %></th>
+        </tr>
+        <tr>
+          <td><%= link_to 'Cancel', cats_path, class: "as-button" %></td>
+          <td><%= cat.submit "Complete admission" %></td>
+        </tr>
+      </table>
 
-      <div class="field">
-        <%= cat.label :breed %><br>
-        <%= cat.text_area :breed %>
-      </div><!-- field -->  
-    </div><!-- cat-info -->
-  </div><!-- cat-layout -->
 <% end #form_for(@cat) %>
