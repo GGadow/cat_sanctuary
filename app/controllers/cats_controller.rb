@@ -17,10 +17,11 @@ class CatsController < ApplicationController
 
   def create
     @cat = Cat.new(cat_params)
+
     respond_to do |format|
       if @cat.save
         format.html {redirect_to cats_path, notice: 'Cat has been saved.'}
-        format.json { render :show, status: :created, location: @cat }
+        format.json {render :show, status: :created, location: @cat}
       else
         format.html {render :new}
         format.json {render json: @cat.errors, status: :unprocessable_entity}
@@ -41,7 +42,7 @@ class CatsController < ApplicationController
     end
 
     def cat_params
-      
+      params.require(:cat).permit(:name, :breed, :age, :image_url, :arrival_date, :notes)
     end
 
 end

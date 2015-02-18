@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206175132) do
+ActiveRecord::Schema.define(version: 20150218025836) do
 
   create_table "adoptions", force: :cascade do |t|
     t.integer  "cat_id"
     t.integer  "person_id"
-    t.datetime "adoption_date", null: false
+    t.datetime "adoption_date"
     t.text     "notes"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -26,23 +26,23 @@ ActiveRecord::Schema.define(version: 20150206175132) do
   add_index "adoptions", ["person_id"], name: "index_adoptions_on_person_id"
 
   create_table "cats", force: :cascade do |t|
-    t.string   "name",         null: false
+    t.string   "name"
     t.string   "breed"
     t.integer  "age"
     t.string   "image_url"
-    t.datetime "arrival_date", null: false
+    t.datetime "arrival_date"
     t.text     "notes"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   create_table "people", force: :cascade do |t|
-    t.string   "fname",       null: false
-    t.string   "lname",       null: false
-    t.string   "address",     null: false
-    t.string   "city",        null: false
-    t.string   "state",       null: false
-    t.string   "postal_code", null: false
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal_code"
     t.string   "day_phone"
     t.string   "eve_phone"
     t.text     "notes"
