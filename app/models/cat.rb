@@ -2,7 +2,7 @@ class Cat < ActiveRecord::Base
   has_one :adoption
   has_one :person, :through => :adoptions
 
-  IMG_URL = "assets/cats/"
+  IMG_URL = "/assets/cats/"
   IMG_PATH = "assets/images/cats/"
 
   def img 
